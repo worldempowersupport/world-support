@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    LOGIN
+  </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://kit.fontawesome.com/9b973a3c2a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/signup.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+  <form id="loginForm" class="login-form">
+    <center class="image">
+      <img class="logo" src="images/logo.png">
+   </center>
+    <center>
+      <h2>
+        Login
+     </h2>
+    </center>
+        <label for="loginUsername">Username:</label>
+        <br>
+        <input type="text" id="loginUsername" name="loginUsername" required><br><br>
+        
+        <label for="loginPassword">Password:</label>
+        <br>
+        <input type="password" id="loginPassword" name="loginPassword" required><br><br>
+        
+        <center>
+          <button type="submit">
+            Login
+          </button>
+        </center>
+        <center onclick="showSignup()" class="dont">
+          Don't have an account..?  Register an account 
+        </center>
+  </form>
+   <div id="loading" class="loading">
+       <div class="spinner"></div>
+    </div>
+  <form id="createAccountForm" class="login-form2">
+    <center class="image">
+      <img class="logo" src="images/logo.png">
+   </center>
+    <center>
+      <h2>
+        Create Account 
+     </h2>
+    </center>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+        <center>
+          <button type="submit">
+            Create Account
+          </button>
+        </center>
+        <center onclick="showSignin()" class="dont">
+          Already have an account..?  Login
+        </center>
+    </form>
+    
+    
+    <center class="footer-note">
+      powered by world support
+      <br>
+    &copy; copyright 2018
+    </center>
+    <script src="/custom/sweetalert2.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>

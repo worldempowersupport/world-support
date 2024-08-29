@@ -1,0 +1,149 @@
+body {
+  margin: 0px;
+}
+
+.transaction-section {
+  display: block;
+  width: 360px;
+  margin: 0px auto;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  background-color: white;
+}
+
+@media(max-width: 360px) {
+.transaction-section {
+    display: block;
+    width: 360px;
+    margin: 0px auto;
+    padding: 20px 20px 80px;
+    background-color: white;
+  }
+}
+
+.transaction-top {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  font-size: 18px;
+  font-weight: bolder;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+@media(max-width: 360px) {
+  .transaction-top {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #D5D9FF;
+  }
+}
+
+
+.bi-chevron-left {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.all-transaction-body {
+  background-color: white;
+  margin-top: 100px;
+}
+
+.form {
+  width: 280px;
+  margin: 0px auto;
+  display: block;
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.form-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-first,
+label {
+  text-align: left;
+  font-weight: bold;
+}
+
+.label-last {
+  text-align: right;
+  font-weight: bold
+}
+
+.short-input {
+  width: 120px;
+  height: 20px;
+  padding: 7px;
+  border: 1px solid black;
+}
+
+label {
+  text-align: left;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.address-input {
+  width: 260px;
+  height: 20px;
+  padding: 7px;
+  border: 1px solid black;
+}
+
+button {
+  width: 264px;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  background-color: #9100FF;
+  font-weight: bold;
+}
+
+button:active {
+  background-color: white;
+  color: #9100FF;
+}
+
+.transaction-section2 {
+  display: none;
+  width: 360px;
+  margin: 0px auto;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  background-color: white;
+}
+
+@media(max-width: 360px) {
+.transaction-section2 {
+    display: none;
+    width: 360px;
+    margin: 0px auto;
+    padding: 20px 20px 80px;
+    background-color: white;
+  }
+}
+
+.we-note {
+  font-size: 13px;
+  margin: 10px 0px;
+}

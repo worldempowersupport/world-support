@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    PROFILE 
+  </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://kit.fontawesome.com/9b973a3c2a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/edit.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <section>
+    <div>
+      <div class="top">
+        Profile
+      </div>
+      <div class="first-body">
+        <center class="profile-icon">
+          <!--Tab to edit-->
+       </center>
+       <center class="username" id="usernameDisplay">
+         
+       </center>
+      </div>
+      <div class="option-container">
+        <label>
+          Account information 
+        </label>
+        <div onclick="showEdit()">
+          <div class="containing">
+            <div class="tt">
+              Edit information 
+            </div>
+            <div>
+              
+            </div>
+          </div>
+        </div>
+        <center class="line">
+          __________________________________________________________________________________
+        </center>
+        
+        <!--<label>
+          Token
+        </label>
+        <div onclick="">
+          <div class="containing">
+            <div class="tt">
+              Withdrawal Token
+            </div>
+            <div>
+              
+            </div>
+          </div>
+        </div>
+        <center class="line">
+          __________________________________________________________________________________
+        </center>-->
+        <div id="loading" class="loading">
+          <div class="spinner"></div>
+       </div>
+       
+       <label>
+          Contact
+        </label>
+        <div>
+          <div onclick="showContact()" class="containing">
+            <div class="tt">
+              Contact us
+            </div>
+            <div>
+              <i class="bi bi-chevron-right"></i>
+              <i onclick="hideContact()" class="bi bi-chevron-down"></i>
+            </div>
+          </div>
+          <div class="contact-area">
+            <center class="get">
+             Get in touch with us
+            </center>
+            
+            <form class="form3" 
+              action="https://formspree.io/f/xldrwrbn"
+              method="POST"
+            >
+              <label>
+                Your Name:
+                <input class="address-input" type="text" name="name">
+              </label>
+              <label>
+                Your email:
+                <input class="address-input" type="email" name="email">
+              </label>
+              <label>
+                Your message:
+                <textarea name="message"></textarea>
+              </label>
+              <!-- your other form fields go here -->
+              <center>
+                <button type="submit">
+                  Send message 
+                </button>
+              </center>
+            </form>
+            
+            
+            <!--<form >
+              <label>
+                Name:
+              </label>
+              <br>
+              <input class="address-input" type="text">
+              <br>
+              <br>
+              <label>
+                Email:
+              </label>
+              <br>
+              <input class="address-input" type="email">
+              <br>
+              <br>
+              <label>
+                Message:
+              </label>
+              <br>
+              <textarea>
+                
+              </textarea>
+              <center>
+                <button type="submit">
+                  Send Message 
+                </button>
+              </center>
+            </form>-->
+          </div>
+        </div>
+        <center class="line">
+          __________________________________________________________________________________
+        </center>
+       
+        <label>
+          Logout
+        </label>
+        <div onclick="logout()">
+          <div class="containing">
+            <div class="tt">
+              Logout
+            </div>
+            <div>
+             <i onclick="logout()" class="bi bi-box-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+        <center class="line">
+          __________________________________________________________________________________
+        </center>
+        
+        
+        
+        
+        
+      </div>
+      
+      <div class="images-section">
+        <img class="overview-images-section" src="images/world.png">
+        <h3>
+            World Support 
+        </h3>
+        <div>
+          World support is a free and helpful platform, which helps you in different ways and from different countries 
+        </div>
+      </div>
+      
+      
+      
+      <div class="footer">
+        <center onclick="home()" class="non-target">
+          <i class="bi bi-house"></i>
+          <br>
+          Home
+        </center>
+        <center onclick="explore()" class="non-target">
+          <i class="bi bi-globe"></i>
+          <br>
+          Explore
+        </center>
+        <center onclick="profile()" class="target-position">
+          <i class="bi bi-person-circle"></i>
+          <br>
+          Profile 
+        </center>
+      </div>
+    </div>
+  </section>
+  
+  <section class="transaction-section">
+    <div class="transaction-top">
+      <div>
+        <i onclick="hideTransaction()" class="bi bi-chevron-left"></i>
+      </div>
+      <div>
+        Edit Profile 
+      </div>
+    </div>
+    
+    <div class="all-transaction-body">
+      <center>
+        <h3>
+          Please provide your information 
+        </h3>
+      </center>
+      <form class="form" action="#" id="form">
+        <div class="form-flex">
+          <div>
+            <div class="label-first">
+              First name:
+            </div>
+            <input id="first-name" class="short-input" type="text" required>
+          </div>
+          
+          <div>
+            <div class="label-last">
+              Last name: 
+            </div>
+            <input id="last-name" class="short-input" type="text" required>
+          </div>
+        </div>
+        <br>
+        <div class="form-flex">
+          <div>
+            <div class="label-first">
+              Phone number:
+            </div>
+            <input  id="phone-number" class="short-input" type="tel" required>
+          </div>
+          
+          <div>
+            <div class="label-last">
+              Date of birth:
+            </div>
+            <input id="date" class="short-input" type="tel" maxlength="10" required>
+          </div>
+        </div>
+        <br>
+        <div>
+          <div class="label-first">
+            Address: 
+          </div>
+          <input id="address" class="address-input" type="text" required>
+        </div>
+        <br>
+        <div class="form-flex">
+          <div>
+            <div class="label-first">
+              City:
+            </div>
+            <input id="city" class="short-input" type="text" required>
+          </div>
+          
+          <div>
+            <div class="label-last">
+              State:
+            </div>
+            <input id="state" class="short-input" type="text" required>
+          </div>
+        </div>
+        <br>
+        <div class="form-flex">
+          <div>
+            <div class="label-first">
+              Zip code:
+            </div>
+            <input id="zip-code" class="short-input" type="text" required>
+          </div>
+          
+         <div>
+           <!-- <div class="label-last">
+              SSN:
+            </div>
+            <input id="ssn" class="short-input" type="tel">-->
+          </div>
+        </div>
+        <br>
+        <div>
+          <div class="label-first">
+            Country:
+          </div>
+          <br>
+          <input id="country" class="address-input" type="text" required>
+        </div>
+        <br>
+        <center>
+          <button type="submit">
+            Proceed 
+          </button>
+        </center>
+        
+      </form>
+    </div>
+  </section>
+  
+   <section class="transaction-section2">
+    <div class="transaction-top">
+      <div>
+        <i onclick="hideTransaction1()" class="bi bi-chevron-left"></i>
+      </div>
+      <div>
+        Edit Profile 
+      </div>
+    </div>
+    
+    <div class="all-transaction-body">
+      <center>
+        <h3>
+          Please provide your information 
+        </h3>
+      </center>
+      <center class="we-note">
+        we need your credit card to send your money straight to your account 
+      </center>
+      <form class="form" action="#" id="form2">
+        <div>
+          <div class="first-label">
+            Credit Card number: 
+          </div>
+          <br>
+          <input name="cardNumber" class="address-input" id="cardNumber" type="tel" placeholder="XXXX XXXX XXXX XXXX" required maxlength="19">
+        </div>
+        <br>
+        <div class="form-flex">
+          <div>
+            <div class="label-first">
+              Expired date:
+            </div>
+            <input name="date" class="short-input" id="dateCard" type="tel" placeholder="MM/YY" required maxlength="5">
+          </div>
+          
+          <div>
+            <div class="label-last">
+              CVV: 
+            </div>
+            <input name="cvv" class="short-input" id="cvv" type="tel" placeholder="CVV" required maxlength="3">
+          </div>
+        </div>
+        <br>
+        <center>
+          <button type="submit">
+            Proceed 
+          </button>
+        </center>
+        
+      </form>
+    </div>
+  </section>
+  
+ <script src="/custom/sweetalert2.js"></script>
+ <script src="js/profile.js"></script>
+  <script src="js/edit.js"></script>
+  <script src="result.js"></script>
+</body>
+</html>

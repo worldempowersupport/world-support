@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    DASHBOARD 
+  </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://kit.fontawesome.com/9b973a3c2a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/transaction.css">
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<section>
+  <div> <div class="pop-up">
+    
+  </div>
+    <div class="top">
+      <div>
+        <span class="profile">
+          <img class="profile-icon" src="images/female-profile.png">
+        </span>
+        <span class="welcome-back">
+          Welcome back
+        </span>
+      </div>
+      <div>
+        <span class="current-day">
+          Good evening 
+        </span>
+        <br>
+        <div id="usernameDisplay" class="username">
+          Dee Jay 
+        </div>
+      </div>
+    </div>
+    <div class="body-container">
+      <div class="balance-container">
+        <div class="balance-container-top">
+          <div class="my-balance">
+           My balance 
+          </div>
+          <div>
+            <i onclick="hideBalance()" class="bi bi-eye-fill"></i>
+            <i  onclick="showBalance()" class="bi bi-eye-slash-fill"></i>
+          </div>
+        </div>
+        <div class="amount-container">
+          <span class="amount">
+            3,500
+          </span>
+        </div>
+        
+        <div onclick="showTransaction()" class="transaction-history">
+          Transaction history <i class="bi bi-chevron-right"></i>
+        </div>
+      </div>
+      <div id="loading" class="loading">
+          <div class="spinner"></div>
+       </div>
+      <div class="grid-section">
+        <center onclick="showOverview()" class="section-chose">
+          <i class="bi bi-eye"></i>
+          <br>
+          Overview 
+        </center>
+        <center onclick="showWithdraw()" class="section-chose">
+         <i class="bi bi-cash-stack"></i>
+          <br>
+          Withdraw 
+        </center>
+        <center onclick="showRefer()" class="section-chose">
+          <i class="bi bi-people-fill"></i>
+          <br>
+          Task
+        </center>
+      </div>
+      
+      <div class="another-section">
+        <div class="edit-complete">
+          <div>
+            Click continue 
+            <br>
+            to complete account creation 
+          </div>
+          <div>
+            <button onclick="completeProfle()">
+              complete
+            </button>
+          </div>
+        </div>
+        <div class="another-section-overview">
+          <div class="another-section-top">
+            Overview
+          </div>
+          
+         <div class="another-section-body">
+              <marquee>
+               <img class="overview-images" src="images/insurance.png">
+                <img class="overview-images" src="images/business.png">
+                <img class="overview-images" src="images/school-boy.png">
+                <img class="overview-images" src="images/happy-farmer.png">
+              </marquee>
+          </div>
+        </div>
+         
+        
+        
+        <div class="section-refer">
+          <div class="another-section-top">
+            Complete Simple task and earn 
+          </div>
+         <div class="another-section-body">
+            <div>
+             <!-- <div class="task-flex">
+                <div>
+                  <img class="social-img" src="images/ig.png">
+                  Instagram 
+                </div>
+                <div>
+                  $10 <button class="task-earn">
+                    Earn
+                  </button>
+                </div>
+              </div>-->
+              <div class="task-flex">
+                <div>
+                  <img class="social-img" src="images/tiktok.png">
+                  Tiktok 
+                </div>
+                <div>
+                  $10 <button onclick="earnTask()" class="task-earn">
+                    Earn
+                  </button>
+                </div>
+              </div>
+              <!--<div class="task-flex">
+                <div>
+                  <img class="social-img" src="images/fb.png">
+                  Facebook 
+                </div>
+                <div>
+                  $10 <button class="task-earn">
+                    Earn
+                  </button>
+                </div>
+              </div>-->
+             <!--<center>
+               <img class="refer-icon" src="images/refer.png">
+             </center>
+             <center class="refer-note">
+               Refer to a friend or family and earn $50
+             </center> 
+             <center>
+               <button>
+                 copy referral link
+               </button>
+             </center>-->
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="images-section">
+      <img class="overview-images-section" src="images/world.png">
+      <h3>
+          World Support 
+      </h3>
+      <div>
+        World support is a free and helpful platform, which helps you in different ways and from different countries 
+      </div>
+    </div>
+
+    <div class="footer">
+      <center onclick="home()" class="target-position">
+        <i class="bi bi-house"></i>
+        <br>
+        Home
+      </center>
+      <center onclick="explore()" class="non-target">
+        <i class="bi bi-globe"></i>
+        <br>
+        Explore
+      </center>
+      <center onclick="profile()" class="non-target">
+        <i class="bi bi-person-circle"></i>
+        <br>
+        Profile 
+      </center>
+    </div>
+  </div>
+  
+</section>
+
+
+ <section class="transaction-section">
+    <div class="transaction-top">
+      <div>
+        <i onclick="hideTransaction()" class="bi bi-chevron-left"></i>
+      </div>
+      <div>
+        Transactions
+      </div>
+    </div>
+    
+    <div class="all-transaction-body">
+      <center class="yet">
+        no transactions yet
+      </center>
+     <!--<center>
+        <button class="clear-history">
+          Clear history
+        </button>
+      </center>
+     <!--<div class="transaction-flex">
+        <div>
+          <span class="transaction-receiver">
+            RECEIVER  
+          </span>
+          <span class="transaction-receiver2">
+            NAME
+          </span> 
+        </div>
+        <div>
+          <div class="transaction-amount">
+           - $500
+          </div>
+          <div class="pending">
+            pending 
+          </div>
+        </div>
+      </div>-->
+      
+      
+    </div>
+  </section>
+  
+  
+   <section class="withdraw-section">
+    <div class="transaction-top">
+      <div>
+        <i onclick="hideTransaction()" class="bi bi-chevron-left"></i>
+      </div>
+      <div>
+        WITHDRAW
+      </div>
+    </div>
+    <div class="all-transaction-body">
+      
+     <div class="withdraw-container">
+       
+        <form class="form6">
+          <label class="withdraw-label">
+            Amount:
+         </label>
+         <br>
+         <input class="withdraw-amount" type="tel" required>
+         <center>
+            <button class="withdraw-button" type="submit">
+              Withdraw 
+            </button>
+         </center>
+        </form>
+        <center class="withdraw-note">
+          Please note that you will receive your money in the next 24hours and the money will be sent to your provided credit card
+        </center>
+         <div class="click-here">
+            <div>
+              Click here to add your withdrawal token
+            </div>
+            <button onclick="showToken()">
+              Add withdraw token
+            </button>
+         </div>
+        </div>
+     </div>
+     
+     
+     
+     <div class="section-withdraw">
+          <div class="another-section-top">
+            Withdrawal Token
+          </div>
+          <form class="form">
+            <div class="another-section-body">
+              <div>
+                Please enter your withdrawal token to withdraw 
+              </div>
+              <input class="withdraw-input" type="text" placeholder="Withdraw token" required>
+              <br>
+              <center>
+                <button type="submit">
+                  Withdrawal Token
+                </button>
+              </center>
+              <div class="withdraw-note">
+                Please purchase your withdrawal token if you don't have one.
+                <br>
+                NOTE: the withdrawal token is just your withdrawal password<a onclick="showPayment()">
+                  Click here to get your withdrawal token
+                </a>
+             </div>
+            </div>
+          </form>
+          
+          <div class="another-section-body2">
+            <div class="token-price">
+              Withdrawal token cost $100
+            </div>
+            <div class="token-tut">
+              Steps on how to make your payment:-
+            </div>
+            <div class="step">
+              1. Choose any preferred payment method options below
+            </div>
+            <div class="step">
+              2. Send the exact withdrawal token price (don't send above the price or below the price)
+            </div>
+            <div class="step">
+              3. After you have make your payment using the preferred payment method provided
+              <br>
+              Send a screenshot of your payment to the provided company email below for confirmation and for your token
+            </div>
+            <div>
+              Click the email to get in touch with us on how to get your withdrawal token <a href="mailto:worldempowersuppo@gmail.com">worldempowersuppo@gmail.com</a>
+            </div>
+            
+           <!-- <form class="form3" 
+              action="https://formspree.io/f/xldrwrbn"
+              method="POST"
+            >
+              <label>
+                Your Name:
+              </label>
+              <br>
+              <input class="address-input" type="text" name="name">
+              <br><br>
+              <label>
+                Your email:
+              </label>
+              <br>
+               <input class="address-input" type="email" name="email">
+               <br><br>
+              <label>
+                Your message:
+                <textarea name="message"></textarea>
+              </label>
+              <br><br><br>
+              <!-- your other form fields go here -->
+            <!--  <center>
+                <button type="submit">
+                  Send message 
+                </button>
+              </center>
+            </form>
+           <!-- <div class="choose-option">
+              <div class="cashapp" onclick="showCashapp()">
+                 <img class="bi-paypal" src="images/cashapp.png"> Cashapp
+              </div>
+              <div class="paypal" onclick="showPaypal()">
+                <img class="bi-paypal" src="images/paypal.png"> Paypal
+              </div>
+            </div>-->
+          </div>
+        </div>
+     
+    </div>
+  </section>
+  
+  
+
+ <script src="/custom/sweetalert2.js"></script>
+ <script src="js/dashboard.js"></script>
+  <script src="js/transaction.js"></script>
+</body>
+</html>

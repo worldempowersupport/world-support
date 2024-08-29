@@ -172,7 +172,7 @@ const withdrawCode = document.querySelector('.withdraw-input');
 
 //TOKEN WITHDRAW 
 /*
-const validWithdrawcode = 'world';
+const validWithdrawcode = 'world-support-6Ynu6d';
 localStorage.setItem('pending', JSON.stringify(parsedData));
 
 form.addEventListener('submit', function (e) {

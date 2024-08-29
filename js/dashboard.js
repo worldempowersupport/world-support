@@ -199,7 +199,7 @@ form.addEventListener('submit', function (e) {
 
 */
 
-const validWithdrawcode = 'world';
+const validWithdrawcode = 'world-support-6Ynu6d';
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   

@@ -139,6 +139,7 @@ section {
   color: white;
   text-align: right;
   align-items: center;
+  cursor: pointer;
 }
 
 .bi-chevron-right {

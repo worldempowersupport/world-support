@@ -33,6 +33,7 @@ body {
   top: 0px;
   left: 0px;
   right: 0px;
+  cursor: pointer;
 }
 
 @media(max-width: 360px) {
@@ -49,6 +50,7 @@ body {
     font-size: 18px;
     font-weight: bold;
     border-bottom: 2px solid #D5D9FF;
+    cursor: pointer;
   }
 }
 
